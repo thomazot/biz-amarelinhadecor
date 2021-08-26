@@ -1,5 +1,9 @@
-@media media-max-lg
-    .categories
+.categories
+    &__show
+        order: -1
+        margin-left: 10px
+
+    @media media-max-lg
         .parent
             position: relative
 
@@ -27,7 +31,7 @@
                 align-items: center
                 width: 48px
                 height: 48px
-                background: var(--primary-contrast)
+                color: var(--primary-contrast)
                 font-size: 20px
                 transition: all .2s ease
 
@@ -41,22 +45,106 @@
         .all-li--0
             padding-bottom: 0
 
-@media media-min-lg
-    .categories
-        flex: 1
-        margin-bottom: 0 !important
-        min-width: 0
-        background: none
+    @media media-min-lg
+        --color-background: #F2F2F2
+        --color-text: #8F8F8F
+
+        &
+            position: absolute
+            top: 100%
+            left: 0
+            z-index: 1
+            flex: 1
+            margin-bottom: 0 !important
+            min-width: 0
+            width: 100%
+            background: var(--color-background)
+            transition: all .2s ease-in-out
+            transform: translate3d(0, 0, 0)
+
+            .scrolling:not(.scrolling--up) &
+                transform: translate3d(0, -55px, 0)
+                pointer-events: none
+
+        &__products
+            flex: 0 1 225px
+            border: 0
+            border-radius: radius-size
+            background: var(--color-products)
+
+            .title
+                display: none
+
+            .products
+                &__item
+                    flex: 1
+                    padding: 0
+                    min-width: 0
+
+                &__case
+                    background: none
 
         .a--0
-            color: var(--primary)
-            text-transform: uppercase
+            padding: 0
+            height: 56px
+            color: var(--color-text)
             white-space: nowrap
-            font-weight: semibold
+            font-weight: medium
             font-size: 14px
 
+        .a--1
+            font-weight: bold
+
+        .a--2
+            font-weight: regular
+
+        .a--1, .a--2
+            padding: 0 0 26px
+            color: var(--secundary)
+            font-size: 16px
+
+            &:hover
+                box-shadow: none
+                text-decoration: underline
+
         .li--0
-            order: 1
+            position: static
+            flex: 0 0 auto
+
+            &:hover
+                .a--0
+                    background: none
+                    box-shadow: inset 0 -2px 0 var(--primary)
+                    color: var(--color-text)
+
+            &:last-child
+                .a--0 span
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    padding: 0 16px
+                    height: 30px
+                    border-radius: 30px
+                    background: var(--primary)
+                    color: var(--secundary)
+
+        .li--1
+            flex: 0 1 180px
+
+        .ul--0
+            justify-content: space-between
+            gap: (gap / 2)
+
+            container()
+
+        .ul--1
+            display: flex
+            justify-content: space-between
+
+        .box--1
+            padding: gap
+            width: 100%
+            border-radius: 0 0 radius-size radius-size
 
         &__all
-            order: 2
+            display: none

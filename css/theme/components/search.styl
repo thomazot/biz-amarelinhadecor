@@ -1,0 +1,47 @@
+.search
+    .header &
+        --color-border: unquote('#B9B9B933')
+        --color-background: unquote('#DFDFDF33')
+        --color-placeholder: #8F8F8F
+
+        @media media-min-sm
+            position: relative
+            flex: 0 1 652px
+            margin: 0 auto
+
+            &__input
+                padding-right: 55px
+                height: 47px
+                border: solid 1px var(--color-border)
+                border-radius: radius-size
+                background: var(--color-background)
+                box-shadow: none
+                font-weight: medium
+                font-size: 13px
+
+                &::placeholder
+                    color: var(--color-placeholder)
+
+                &:hover
+                    border-color: var(--secundary)
+
+                &:focus
+                    border-color: var(--primary)
+
+            &__button
+                position: absolute
+                top: 0
+                right: 0
+                display: flex
+                justify-content: center
+                align-items: center
+                padding: 0
+                width: 55px
+                height: 100%
+                background: none
+                box-shadow: none
+
+                .ico
+                    width: 17px
+                    height: 21px
+                    fill: var(--secundary)

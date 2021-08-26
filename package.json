@@ -21,12 +21,12 @@
         "button": "npm run button:transpile",
         "cart": "npm run cart:bundle && npm run cart:transpile",
         "components": "npm run cart && npm run button",
-        "start": "source $HOME/.nvm/nvm.sh; nvm use 10; npx gulp watch",
-        "deploy": "source $HOME/.nvm/nvm.sh; nvm use 10; npx gulp prod",
+        "start": "npx gulp watch",
+        "deploy": "npx gulp prod",
         "presvg": "yarn svg-min",
-        "svg": "source $HOME/.nvm/nvm.sh; nvm use 10; npx gulp svg",
-        "svg-min": "source $HOME/.nvm/nvm.sh; nvm use 10; npx gulp svg-min",
-        "imagemin": "source $HOME/.nvm/nvm.sh; nvm use 10; npx gulp imagemin"
+        "svg": "npx gulp svg",
+        "svg-min": "npx gulp svg-min",
+        "imagemin": "npx gulp imagemin"
     },
     "keywords": [
         "bizcommerce",

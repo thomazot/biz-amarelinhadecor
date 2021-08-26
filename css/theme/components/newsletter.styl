@@ -1,0 +1,46 @@
+.newsletter
+    padding: gap 0
+
+    &__text
+        @media media-min-lg
+            flex: 0 1 340px
+            margin-bottom: 0
+            padding-bottom: 8px
+
+        .title
+            color: var(--primary)
+            text-transform: uppercase
+            font-weight: bold
+            font-size: 24px
+
+            strong
+                display: block
+                color: white
+                text-transform: none
+                font-weight: regular
+                font-size: 14px
+
+    &__name, &__email
+        @media media-min-lg
+            flex: 1
+            min-width: 0
+
+    &__submit
+        .btn
+            height: 48px
+            color: var(--secundary)
+            text-transform: uppercase
+            font-weight: bold
+            font-size: 12px
+
+        @media media-min-lg
+            flex: 0 1 155px
+            min-width: 0
+
+    &__form
+        @media media-min-lg
+            flex-wrap: nowrap
+
+    .input-text
+        height: 48px
+        box-shadow: none

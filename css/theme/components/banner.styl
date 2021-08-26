@@ -1,2 +1,42 @@
 .cms-home .header-container + .banner
-    margin: 0
+    margin-top: -(gap / 2)
+
+#banner__home_banner_mosaico
+    .banner
+        &__wrapper
+            display: grid
+            grid-template-areas: 'b1 b2 b4' 'b1 b3 b4'
+
+            @media media-min-lg
+                grid-gap: 20px
+
+            @media media-max-lg
+                grid-gap: 5px
+
+        &__link
+            display: block
+            width: 100%
+            height: 100%
+
+    .slide--1
+        grid-area: b1
+
+    .slide--2
+        grid-area: b2
+
+    .slide--3
+        grid-area: b3
+
+    .slide--4
+        grid-area: b4
+
+    img
+        min-width: 100%
+        min-height: 100%
+        object-fit: cover
+
+.cms-home
+    .main
+        .banner
+            overflow: hidden
+            width: 100%

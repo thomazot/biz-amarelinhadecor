@@ -1,0 +1,26 @@
+.top-header
+    position: relative
+    z-index: 100
+    margin-bottom: 0 !important
+    height: 38px
+    background: var(--secundary)
+    color: var(--secundary-contrast)
+    font-weight: medium
+    font-size: 12px
+
+    @media media-max-lg
+        display: none
+
+    &__container
+        container()
+
+        display: flex
+        justify-content: space-between
+        align-items: center
+        height: 100%
+        gap: 27px
+
+    .mymenu
+        flex: 1
+        min-width: 0
+        height: 100%

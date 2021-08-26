@@ -1,4 +1,24 @@
 .header
+    position: relative
+    z-index: 10
+    margin-bottom: 0 !important
+    padding: 10px 15px 10px 10px
+
+    @media media-min-lg
+        padding: 20px 0
+        background: white
+        transition: all .2s ease-in-out
+
+        shadowBorder()
+
+        .scrolling &
+            padding: 5px 0
+
     &-container
         position: sticky
         top: 0
+        background: none
+        box-shadow: none
+
+        @media media-max-lg
+            background: white

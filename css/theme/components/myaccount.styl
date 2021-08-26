@@ -1,0 +1,29 @@
+.myaccount
+    .header &
+        &__content
+            display: none !important
+
+    &__header a
+        display: block
+        color: var(--secundary)
+        text-align: center
+
+        @media media-max-lg
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 48px
+            height: 48px
+
+        .ico
+            width: 24px
+            height: 24px
+            fill: var(--primary)
+
+        .text
+            display: block
+            font-weight: medium
+            font-size: 14px
+
+            @media media-max-lg
+                display: none

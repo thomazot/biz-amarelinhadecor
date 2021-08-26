@@ -815,23 +815,36 @@ function default_carrossel_produtos() {
             } else {
                 // se for em uma listagem normal
 
-                $j(el).owlCarousel({
-                    navigation: true,
-                    navigationText: ['?', '?'],
-                    items: 5,
-                    itemsCustom: [
-                        [0, 1],
-                        [568, 2],
-                        [768, 3],
-                        [1024, 4],
-                        [1270, 5],
-                    ],
-                    beforeMove: function () {
-                        if (typeof $j.fn.lazyload != 'undefined') {
-                            $j(el).find('img').lazyload()
-                        }
-                    },
-                })
+                if ($j(el).parents('#products-duo').length) {
+                    $j(el).owlCarousel({
+                        navigation: true,
+                        navigationText: ['?', '?'],
+                        items: 2,
+                        beforeMove: function () {
+                            if (typeof $j.fn.lazyload != 'undefined') {
+                                $j(el).find('img').lazyload()
+                            }
+                        },
+                    })
+                } else {
+                    $j(el).owlCarousel({
+                        navigation: true,
+                        navigationText: ['?', '?'],
+                        items: 5,
+                        itemsCustom: [
+                            [0, 1],
+                            [568, 2],
+                            [768, 3],
+                            [1024, 4],
+                            [1270, 5],
+                        ],
+                        beforeMove: function () {
+                            if (typeof $j.fn.lazyload != 'undefined') {
+                                $j(el).find('img').lazyload()
+                            }
+                        },
+                    })
+                }
             }
         })
     }
@@ -1374,10 +1387,8 @@ function getAllVariables() {
                                 rule.selectorText === ':root'
                                     ? [
                                           ...def,
-                                          ...Array.from(
-                                              rule.style
-                                          ).filter((name) =>
-                                              name.startsWith('--')
+                                          ...Array.from(rule.style).filter(
+                                              (name) => name.startsWith('--')
                                           ),
                                       ]
                                     : def),
@@ -1428,6 +1439,15 @@ function createRootVariableRGB() {
 $j(document)
     .ready(function ($) {
         // document.ready
+        addSVG({
+            'z-down': {
+                selector: '.top-header .mymenu .parent',
+            },
+            'z-whatsapp': {
+                selector: '.icon-whatsapp',
+                mode: 'prepend',
+            },
+        })
         // Create variable rgb
         createRootVariableRGB()
 

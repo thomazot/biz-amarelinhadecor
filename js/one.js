@@ -1057,19 +1057,9 @@ function is468() {
  */
 function hideHeader(status) {
     if (status) {
-        $j('.header-container').animate(
-            {
-                top: '-' + $j('.header-container').outerHeight() + 'px',
-            },
-            200
-        )
+        $j('.header-container').addClass('hidden')
     } else {
-        $j('.header-container').animate(
-            {
-                top: '0px',
-            },
-            200
-        )
+        $j('.header-container').removeClass('hidden')
     }
     return false
 }
@@ -1461,6 +1451,10 @@ $j(document)
             if ($(event.target).hasClass('parent')) {
                 $(event.target).toggleClass('on')
             }
+        })
+        // products
+        $('.catalog-product-view .breadcrumb').each(function () {
+            $('.prod__shop > .col').prepend(this)
         })
     })
     .on('resizeStop', function (e) {

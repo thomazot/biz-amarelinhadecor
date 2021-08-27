@@ -1,0 +1,38 @@
+.sharing-links
+    .list:before
+        color: var(--secundary)
+        content: 'Compartilhe: '
+        font-weight: medium
+        font-size: 20px
+        font-size: 12px
+        opacity: 1
+
+    a
+        background: none
+        color: unquote('rgba(var(--primary-rgb), .3)')
+
+        .ico
+            width: 20px
+            height: 20px
+            fill: currentColor
+
+    .fb-share
+        .ico
+            padding: 3px 0 0 3px
+            border-radius: 2px
+            background: var(--facebook)
+
+            &, path
+                fill: var(--primary-contrast) !important
+
+    .tt-share a
+        color: var(--twitter)
+
+    .pt-share a
+        color: var(--pinterest)
+
+    .tb-share a
+        color: var(--thumblr)
+
+    .lk-share a
+        color: var(--linkedin)

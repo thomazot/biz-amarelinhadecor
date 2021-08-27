@@ -1,0 +1,52 @@
+
+.qty-wrapper
+    .prod__shop &
+        --color-text: #9C9C9C
+        --color-background: #DFDFDF33
+        --color-border: #B9B9B933
+
+        &
+            position: static
+            margin: 0
+            border: solid 1px var(--color-border)
+            border-radius: radius-size
+            background: var(--color-background)
+            transform: none
+
+        input
+            flex: 1
+            min-width: 0
+            width: 100%
+            border: 0
+            background: none
+            box-shadow: none
+            color: var(--color-text)
+            font-weight: medium
+            font-size: 14px
+            appearance: none
+
+        .input-box
+            display: flex
+            align-items: stretch
+
+        .bt-box
+            position: static
+            flex: 0 0 20px
+            background: none
+            box-shadow: none
+            transform: none
+
+        .bt
+            &.plus, &.less
+                display: flex
+                justify-content: center
+                padding: 0
+                width: 100%
+                height: 50%
+                background: none
+
+            &.plus
+                align-items: flex-end
+
+            &.less
+                align-items: flex-start

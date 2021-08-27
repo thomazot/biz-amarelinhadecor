@@ -1,0 +1,180 @@
+.jointsales
+    .owl-wrapper-outer
+        border: 0
+
+    &__title
+        @media media-min-sm
+            font-weight: regular
+            font-size: 20px
+            line-height: 32px
+
+    &__options
+        select
+            padding: 0 15px
+            height: 36px
+            border: 0
+            border-radius: radius-size
+            background: #dfdfdf33 url(down) no-repeat right 15px center
+            box-shadow: none
+            color: #9C9C9C
+            font-weight: medium
+            font-size: 14px
+            line-height: 1
+            appearance: none
+
+    &__row
+        padding: 0
+
+        .jointsales &
+            @media media-min-lg
+                align-items: center
+                gap: 40px
+
+    &__list
+        @media media-max-sm
+            margin-top: gap
+
+    &__current
+        @media media-min-sm
+            padding-bottom: 0
+
+        @media media-min-lg
+            flex: 1
+            min-width: 0
+
+        + .jointsales__list
+            @media media-min-lg
+                flex: 1
+                min-width: 0
+
+    &__currentin
+        padding-bottom: 20px
+
+        @media media-min-lg
+            display: block
+            padding: 16px
+
+    &__currentin, &__item
+        @media media-min-lg
+            display: flex
+            flex-flow: column
+            justify-content: space-between
+            box-shadow: none
+
+        .title
+            font-weight: medium
+            font-size: 14px
+
+        .regular-price, .old-price, .special-price
+            .label
+                display: none
+
+            .price span
+                font-weight: bold
+                font-size: 16px
+
+        .thumb
+            @media media-min-lg
+                margin-bottom: 16px
+
+        img
+            @media media-min-lg
+                width: 100%
+                object-fit: contain
+
+    &__item
+        @media media-min-lg
+            display: block
+            flex: 1
+            min-width: 0
+            max-width: none
+
+    .info &__options
+        @media media-min-lg
+            display: flex
+            gap: 0
+
+            li
+                flex: 1
+
+    &__actions .todos-juntos, &__payments
+        display: none
+
+    &__actions
+        padding: 10px
+        border-radius: radius-size
+        background: #F4F4F4
+        text-align: center
+
+        @media media-min-sm
+            flex: 1
+            margin-top: 16px
+            min-width: 0
+
+        @media media-min-lg
+            position: relative
+            flex: 0 1 360px
+            padding: 34px
+
+            &:after
+                position: absolute
+                top: 50%
+                right: calc(100% + 16px)
+                margin-top: -20px
+                width: 40px
+                height: 40px
+                content: url(equal)
+
+        &:before
+            content: 'Total comprando junto'
+            text-transform: uppercase
+            font-weight: bold
+            font-size: 14px
+
+        .comprando-junto
+            font-size: 0
+
+            .price
+                color: var(--secundary)
+                font-weight: bold
+                font-size: 24px
+
+        .economize
+            padding: 0
+            background: none
+            font-size: 0
+
+            .price
+                color: var(--secundary)
+                font-weight: medium
+                font-size: 12px
+
+                &:before
+                    margin-right: 3px
+                    content: 'economize'
+
+        .btn-jointsales
+            width: 100%
+            height: 48px
+            background: #E1E1DF
+            box-shadow: none
+            color: var(--secundary)
+            text-transform: uppercase
+            letter-spacing: 1.5
+            font-weight: bold
+            font-size: 14px
+
+            &:hover
+                @media media-min-lg
+                    background: #444
+                    color: white
+
+    .more
+        @media media-min-lg
+            width: 40px
+            height: 40px
+            background: no-repeat url(more)
+            transform: none
+
+            &:before
+                display: none

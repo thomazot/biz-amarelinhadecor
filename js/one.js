@@ -99,7 +99,7 @@
          */
         if (neon.default_SVGs !== false) {
             var truck = {
-                'img-truck': {
+                'z-truck': {
                     selector: '.frete__title',
                     mode: 'append',
                 },
@@ -1237,10 +1237,10 @@ $j.fn.neonTheme.custom = {
     m_categories: true, // ativa o responsivo do Menu de Categorias
     m_search: true, // ativa o responsivo da Busca
     m_filters: true, // ativa o responsivo dos Filtros do Catálogo
-    m_myaccount: true, // ativa o responsivo da Minha Conta
-    m_mycart: true, // ativa o responsivo do Meu Carrinho
+    m_myaccount: false, // ativa o responsivo da Minha Conta
+    m_mycart: false, // ativa o responsivo do Meu Carrinho
     m_parcelamento: true, // ativa o responsivo do parcelamento na página de produto
-    m_frete: true, // ativa o responsivo do cálculo de frete na página do produto
+    m_frete: false, // ativa o responsivo do cálculo de frete na página do produto
     m_produto: true, // ativa o responsivo de cada bloco da página de produto
     m_tabs: true, // ativa o responsivo do componente .tabs do tema
     m_painelCliente: true, // ativa o responsivo do Menu do Painel de Cliente
@@ -1248,13 +1248,7 @@ $j.fn.neonTheme.custom = {
      * Funcionalidades do Tema
      */
     dropFrom: false,
-    addSVG: {
-        'img-truck': {
-            selector: '.frete .frete__content .input-box label',
-            mode: 'prepend',
-            ratio: false,
-        },
-    },
+    addSVG: {},
 }
 
 /**
@@ -1452,9 +1446,19 @@ $j(document)
                 $(event.target).toggleClass('on')
             }
         })
+        // catalog
+        $('.catalog-category-view .category-image').each(function () {
+            $('.header-container').after(this)
+        })
         // products
         $('.catalog-product-view .breadcrumb').each(function () {
             $('.prod__shop > .col').prepend(this)
+        })
+        $('.jointsales__row').each(function () {
+            $(
+                '.jointsales__totals, .jointsales__payments, .jointsales__action',
+                this
+            ).wrapAll('<div class="jointsales__actions">')
         })
     })
     .on('resizeStop', function (e) {

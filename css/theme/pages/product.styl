@@ -2,12 +2,19 @@
     .main-container > .breadcrumb
         display: none
 
+    .col-main, .main-container, .main
+        position: static
+
 .prod
     &__img
         @media media-min-lg
             flex: 0 1 640px
 
     &__shop
+        .add-to-links
+            display: none
+
+        // variations
         .configurable
             margin: 16px 0
             padding: 16px 0
@@ -25,6 +32,67 @@
                 label
                     font-weight: medium
                     font-size: 13px
+
+        // prices
+        .old-price
+            .label
+                display: none
+
+            .price
+                text-decoration: none
+
+                span
+                    color: var(--color-old-price)
+                    font-weight: medium
+                    font-size: 12px
+
+        .regular-price, .special-price
+            .label
+                display: none
+
+            .price span
+                color: var(--color-special-price)
+                font-weight: bold
+                font-size: 30px
+
+        .preco-parcelado
+            display: none
+
+        .preco-parcelado-sem-juros
+            .upto
+                display: none
+
+            &:before
+                content: 'até '
+
+            &, .num span, .de span, .value span, .s-juros span
+                color: var(--secundary)
+                font-weight: medium
+                font-size: 12px
+
+        // call-to-actions
+        .add-to-cart-btn
+            flex: 1
+            padding: 0
+            min-width: 0
+            height: 48px
+            text-transform: uppercase
+            letter-spacing: 1.5px
+            font-weight: bold
+            font-size: 14px
+            line-height: 48px
+
+        .add-to-cart-buttons
+            display: flex
+            gap: 10px
+
+            .qty-wrapper
+                flex: 0 0 70px
+
+        .frete
+            margin-top: gap
+            padding-top: 13px
+            border-top: solid 1px #EEEEEE
 
     &__name
         h1
@@ -64,3 +132,51 @@
                 width: 75px
                 height: 75px
                 object-fit: contain
+
+// Colateral
+.product-collateral
+    position: static
+
+    &:before
+        position: absolute
+        left: 0
+        z-index: -1
+        display: block
+        width: 100%
+        height: 550px
+        background: linear-gradient(180deg, #F9F9F9 0, rgba(255, 255, 255, 0) 32.72%)
+        content: ''
+
+.related
+    &__subtitle, &__add-checkbox
+        display: none
+
+@media media-min-sm
+    .related
+        &__title
+            font-weight: regular
+            font-size: 20px
+            line-height: 32px
+
+@media media-min-lg
+    .tabs
+        padding: gap 0
+
+        &__tab
+            &, &.on
+                padding: 0
+                border: 0
+                background: none
+                font-weight: regular
+                font-size: 20px
+
+        &__content
+            padding-right: 0
+            padding-left: 0
+            border: 0
+            background: none
+
+            &, .std
+                color: #000
+                font-weight: regular
+                font-size: 14px

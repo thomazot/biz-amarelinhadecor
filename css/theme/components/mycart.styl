@@ -12,11 +12,18 @@
         width: 44px
         height: 47px
 
+        @media media-max-lg
+            display: flex
+            justify-content: center
+            align-items: center
+
         .ico
-            margin-top: 21px
             width: 28px
             height: 25px
             fill: var(--secundary)
+
+            @media media-min-lg
+                margin-top: 21px
 
         .text
             display: none

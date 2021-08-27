@@ -76,6 +76,11 @@
             font-weight: bold
             font-size: 14px
 
+            &:hover
+                @media media-min-lg
+                    background: var(--secundary)
+                    color: var(--color-call-to-actions)
+
     &__title
         font-weight: regular
         font-size: 20px
@@ -85,6 +90,9 @@
 
     &__list
         margin: 0
+
+    &__item
+        padding: 0 5px 10px
 
     &__duo
         @media media-min-lg

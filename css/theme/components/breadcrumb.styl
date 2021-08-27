@@ -1,0 +1,32 @@
+.breadcrumb
+    &__home .breadcrumb__link:before
+        display: none
+
+    &__link
+        color: var(--secundary)
+        font-weight: medium
+        font-size: 14px
+
+    &__last
+        color: var(--primary)
+        font-weight: bold
+        font-size: 14px
+
+    &__sep
+        display: flex
+        justify-content: center
+        align-items: center
+
+        &:before
+            icon('\f054')
+
+            color: var(--secundary)
+            font-size: 7px
+
+        span
+            display: none
+
+    .catalog-category-view &
+        @media media-min-lg
+            display: flex
+            height: 63px

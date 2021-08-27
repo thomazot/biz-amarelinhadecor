@@ -1,0 +1,27 @@
+.category-title, .category-description, .toolbar .amount, .toolbar .view-mode, .toolbar .limiter, .toolbar .sort-by label
+    display: none !important
+
+.toolbar
+    display: flex
+    justify-content: flex-end
+    padding-right: 4px
+
+    @media media-min-lg
+        margin-top: -79px
+
+    .sorter, .sort-by
+        margin-left: 0
+
+    .sort-by select
+        padding: 15px
+        width: 177px
+        height: 47px
+        border: solid 1px #B9B9B933
+        border-radius: radius-size
+        background: #dfdfdf33 url(down) no-repeat right 15px center
+        box-shadow: none
+        color: #9C9C9C
+        font-weight: medium
+        font-size: 14px
+        line-height: 1
+        appearance: none

@@ -1,0 +1,29 @@
+.filters
+    @media media-min-lg
+        &__filter
+            padding: 0 0 gap
+            box-shadow: none
+
+            &:hover
+                box-shadow: none
+
+            .link, .a--0
+                color: var(--secundary)
+                font-weight: regular
+                font-size: 14px
+
+                .count
+                    color: currentColor
+                    font-size: 14px
+
+            &.categoria
+                .count
+                    display: none
+
+        &__name
+            color: var(--primary)
+            font-weight: bold
+            font-size: 20px
+
+        .title
+            display: none
